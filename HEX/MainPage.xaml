@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HEX.MainPage">
+    <ContentPage.Resources>
+        <!-- Define some color resources for consistency -->
+        <Color x:Key="Primary">#ab3527</Color>
+        <Color x:Key="Secondary">#775752</Color>
+        <Color x:Key="Tertiary">#705c2e</Color>
+    </ContentPage.Resources>
+
+
+
+    <!-- Main layout container -->
+    <Grid x:Name="Container" Margin="10" >
+
+        <!-- Border around the main content -->
+        <Border x:Name="Border" Margin="50" BackgroundColor="White" Stroke="Black" StrokeThickness="1"  >
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" Margin="5"
+                  x:Name="brdrstroke"></RoundRectangle>
+            </Border.StrokeShape>
+            <VerticalStackLayout  VerticalOptions="Center" Padding="10"  >
+                <!-- Title Label -->
+                <Label x:Name="lblTitle" 
+                   FontAttributes="Bold"
+                     FontSize="24"
+                     HorizontalTextAlignment="Center"
+                     Text="Color Maker "
+                     TextColor="{StaticResource Primary}"
+                     Margin="10"
+                     />
+
+                <!-- Red slider -->
+                <Label Text="Red Value:" TextColor="Black" HorizontalTextAlignment="Start" />
+                <Slider x:Name="sldRed"
+                      MaximumTrackColor="Red"
+                      MinimumTrackColor="Yellow"
+                      ThumbColor="{StaticResource Primary}"
+                      ThumbImageSource="pac.png"
+                      ValueChanged="Sldr_ValueChanged"
+                      Margin="10"/>
+
+                <!-- Green slider -->
+                <Label Text="Green Value:" TextColor="Black" HorizontalTextAlignment="Start" />
+                <Slider x:Name="sldGreen"
+                      MaximumTrackColor="Green"
+                      MinimumTrackColor="Yellow"
+                      ThumbColor="{StaticResource Primary}"
+                      ThumbImageSource="pac.png"
+                      ValueChanged="Sldr_ValueChanged"
+                      Margin="10"/>
+
+                <!-- Blue slider -->
+                <Label Text="Blue Value:" TextColor="Black" HorizontalTextAlignment="Start" />
+                <Slider x:Name="sldBlue"
+                  
+                      MaximumTrackColor="Blue"
+                      MinimumTrackColor="Yellow"
+                      ThumbColor="{StaticResource Primary}"
+                      ThumbImageSource="pac.png"
+                      ValueChanged="Sldr_ValueChanged" 
+                      Margin="10"
+                      />
+
+                <!-- HEX input section -->
+
+                <HorizontalStackLayout HorizontalOptions="Center" Padding="10" >
+                    <Label 
+                            x:Name="lblHex"
+                            Text="Hex Value:"
+                            TextColor="Black"
+                            VerticalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            HorizontalOptions="Center"
+                            Margin="5"
+                             />
+                    <Entry x:Name="inputcolor"
+                         HorizontalTextAlignment="End"
+                         Placeholder="000000"
+                        TextColor="Black"
+                        FontSize="15"
+                        TextChanged="inputcolor_TextChanged" 
+                        HorizontalOptions="Center" 
+                        Background="WhiteSmoke"
+                        Margin="1"
+                   />
+
+                </HorizontalStackLayout>
+
+                <!-- Random Color Button -->
+                <Button x:Name="btnRandom"
+                      Clicked="btnRandom_Clicked"
+                      BackgroundColor="{StaticResource Primary}"
+                      Text="Generate Random Color"
+                      TextColor="White"
+                      FontSize="10"          
+                      CornerRadius="30"
+                      Padding="10"/>
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+
+</ContentPage>
